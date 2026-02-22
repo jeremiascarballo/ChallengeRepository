@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import JobItem from "./JobItem";
 
-
-
 const ListJobs = ({handleSendApply}) => {
     
     const [jobs, setJobs] = useState([]);
