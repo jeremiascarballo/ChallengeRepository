@@ -7,6 +7,7 @@ const Dashboard = () => {
 
     const [selectedUser, setSelectedUser] = useState(false);
     const [applyData, setApplyData] = useState({
+        applicationId: null,
         uuid: null,
         jobId: null,
         candidateId: null,
@@ -18,6 +19,7 @@ const Dashboard = () => {
         const finalApplyData = {
             uuid: applyData.uuid,
             candidateId: applyData.candidateId,
+            applicationId : applyData.applicationId,
             jobId: jobData.jobId,
             repoUrl: jobData.repoUrl
         };
@@ -36,6 +38,8 @@ const Dashboard = () => {
         );
 
         if (!response.ok) {
+            const errorData = await response.text();
+            console.log(errorData);
             throw new Error("Error al enviar la aplicación");
         }
 

@@ -27,6 +27,7 @@ const SetDataUser = ({setApplyData, setSelectedUser}) => {
         setApplyData({
             uuid : user.uuid,
             candidateId : user.candidateId,
+            applicationId : user.applicationId
         });
         setSelectedUser(true);
     }
